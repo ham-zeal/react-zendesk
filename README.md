@@ -1,4 +1,4 @@
-# react-zendesk
+# @ham-zeal/react-zendesk
 
 > A component simplifies Zendesk widget usage in your React application
 
@@ -9,7 +9,7 @@ This component applies to Zendesk Web Widget including contact form, live chat, 
 ## Installation
 
 ```sh
-yarn add react-zendesk
+yarn add @ham-zeal/react-zendesk
 ```
 
 ## Component Usage
@@ -17,7 +17,7 @@ yarn add react-zendesk
 ```js
 import React from "react";
 import ReactDOM from "react-dom";
-import { ZenDeskHandler, ZendeskAPI } from "react-zendesk";
+import { ZenDeskHandler, ZendeskAPI } from "@ham-zeal/react-zendesk";
 const ZEN_DESK_KEY = "your zendesk embed key";
 
 // Take the contact form as an example
@@ -56,7 +56,7 @@ ReactDOM.render(<App />, document.getElementById("#app"));
 ## Zendesk API usage
 
 ```js
-import { ZendeskAPI } from "react-zendesk";
+import { ZendeskAPI } from "@ham-zeal/react-zendesk";
 ...
 // Set Zendesk widgets in German
 ZendeskAPI("setLocale", "de");
