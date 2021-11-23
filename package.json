@@ -1,16 +1,17 @@
 {
-  "name": "react-zendesk",
-  "version": "0.1.13",
+  "name": "@ham-zeal/react-zendesk",
+  "version": "1.0.1",
   "description": "A component enable Zendesk in your React application",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel --presets @babel/preset-env,@babel/preset-react --plugins @babel/plugin-proposal-function-bind -d lib/ src/",
+    "compile": "tsc",
     "prepublishOnly": "npm run compile"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/B3nnyL/react-zendesk.git"
+    "url": "git+https://github.com/ham-zeal/react-zendesk.git"
   },
   "keywords": [
     "zendesk",
@@ -20,19 +21,20 @@
   "author": "Shuying Lin <ciao@sylin.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/B3nnyL/react-zendesk/issues"
+    "url": "https://github.com/ham-zeal/react-zendesk/issues"
   },
-  "homepage": "https://github.com/B3nnyL/react-zendesk#readme",
+  "homepage": "https://github.com/ham-zeal/react-zendesk#readme",
   "dependencies": {
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-function-bind": "^7.8.3",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
+    "@types/react": "^17.0.36",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0"
+    "eslint-plugin-react": "^7.19.0",
+    "react": "^17.0.2",
+    "typescript": "4.5.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }

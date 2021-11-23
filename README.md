@@ -9,7 +9,7 @@ This component applies to Zendesk Web Widget including contact form, live chat, 
 ## Installation
 
 ```sh
-npm i react-zendesk --save
+yarn add react-zendesk
 ```
 
 ## Component Usage
@@ -17,29 +17,37 @@ npm i react-zendesk --save
 ```js
 import React from "react";
 import ReactDOM from "react-dom";
-import Zendesk from "react-zendesk";
-const ZENDESK_KEY = "your zendesk embed key";
+import { ZenDeskHandler, ZendeskAPI } from "react-zendesk";
+const ZEN_DESK_KEY = "your zendesk embed key";
 
-// Take contact form as an example
-// Let's customise our contact form appearance, launcher and add prefill content
-const setting = {
+// Take the contact form as an example
+// Let's customize our contact form appearance, launcher, and add pre-filled content
+const settings = {
   color: {
-    theme: "#000"
+    theme: "#000",
   },
   launcher: {
     chatLabel: {
-      "en-US": "Need Help"
-    }
+      "en-US": "Need Help",
+    },
   },
   contactForm: {
     fields: [
-      { id: "description", prefill: { "*": "My pre-filled description" } }
-    ]
-  }
+      { id: "description", prefill: { "*": "My pre-filled description" } },
+    ],
+  },
 };
 
+// Will render a german version of your widget
 const App = () => {
-  return <Zendesk defer zendeskKey={ZENDESK_KEY} {...setting} onLoaded={() => console.log('is loaded')} />;
+  return (
+    <Zendesk
+      defer
+      zen_desk_key={ZEN_DESK_KEY}
+      zen_desk_settings={settings}
+      onLoaded={() => ZendeskAPI("setLocale", "de");}
+    />
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById("#app"));
@@ -51,7 +59,7 @@ ReactDOM.render(<App />, document.getElementById("#app"));
 import { ZendeskAPI } from "react-zendesk";
 ...
 // Set Zendesk widgets in German
-ZendeskAPI("webWidget", "setLocale", "de");
+ZendeskAPI("setLocale", "de");
 ...
 
 ```
